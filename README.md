@@ -40,3 +40,6 @@ Add angular material using new feature introduced on 6.0.0v of angular CLI:
 
 `ng add @angular/material`
 
+Add firebase library to use in angular from [github](https://github.com/angular/angularfire2)
+
+`npm install firebase angularfire2 --save`
