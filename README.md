@@ -35,3 +35,8 @@ adding service worker feature to the project
 install HttpServer 
 
 `npm -g install http-server` and run it: `http-server ./dist/epynotes`
+
+Add angular material using new feature introduced on 6.0.0v of angular CLI:
+
+`ng add @angular/material`
+
