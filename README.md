@@ -43,3 +43,7 @@ Add angular material using new feature introduced on 6.0.0v of angular CLI:
 Add firebase library to use in angular from [github](https://github.com/angular/angularfire2)
 
 `npm install firebase angularfire2 --save`
+
+compatibility with ng6 and rxjs6
+
+`npm install rxjs@6 rxjs-compat@6 --save`
