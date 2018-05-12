@@ -1,0 +1,26 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="saveNote()" #editForm="ngForm">
+  <span mat-dialog-title="">Create new Note</span>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Title" name="title" [(ngModel)]="note.title">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Category" name="category" [(ngModel)]="note.category">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Note" name="body" [(ngModel)]="note.body"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="right">
+    <button mat-raised-button="" mat-dialog-close="">
+      <mat-icon>block</mat-icon> Cancel
+    </button>
+    <button mat-raised-button="" color="accent" type="submit">
+      <mat-icon>save</mat-icon> Save
+    </button>
+  </mat-dialog-actions>
+</form>

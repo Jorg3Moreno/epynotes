@@ -11,7 +11,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MatToolbarModule } from '@angular/material';
-
+import { NotesModule } from './notes/notes.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,13 @@ import { MatToolbarModule } from '@angular/material';
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
+    MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
-    MatToolbarModule
+    NotesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

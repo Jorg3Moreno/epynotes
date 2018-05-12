@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@media only screen and (max-device-width: 768px) {
+  .mat-form-field {
+    width: 100%;
+  }
+}
+
+.mat-card {
+  width: 87%;
+  margin: 2% auto;
+}
+
+.cardfoot {
+  padding: 0 8px 5px;
+}

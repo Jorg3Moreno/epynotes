@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>Create new note</mat-card-title>
+  <mat-card-actions>
+    <button mat-raised-button="" color="accent" (click)="openCreateNoteDialog()">New note</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card role="group" *ngFor="let note of notes">
+  <mat-card-title>{{ note.title }}</mat-card-title>
+  <mat-card-subtitle>{{ note.category }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ note.body }}</p>
+  </mat-card-content>
+  <mat-card-footer class="cardfoot" align="right">
+    <mat-hint>
+      <small>{{ note.id | date}}</small>
+    </mat-hint>
+  </mat-card-footer>
+</mat-card>
