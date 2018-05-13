@@ -20,5 +20,19 @@
         "/assets/**"
       ]
     }
-  }]
+  }],
+  "dataGroups": [
+    {
+      "name": "FirebaseAPI",
+      "urls": [
+        "ADD_YOUR_FIREBASE_databaseURL_HERE"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxAge": "2h",
+        "maxSize": 100,
+        "timeout": "4s"
+      }
+    }
+  ]
 }
