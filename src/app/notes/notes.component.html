@@ -5,7 +5,11 @@
   </mat-card-actions>
 </mat-card>
 <mat-card role="group" *ngFor="let note of notes">
-  <mat-card-title>{{ note.title }}</mat-card-title>
+  <mat-card-title>
+    {{ note.title }}
+    <mat-icon class="spacer" (click)="deleteNote(note)">delete</mat-icon>
+    <mat-icon class="spacer" (click)="editNote(note)">edit</mat-icon>
+  </mat-card-title>
   <mat-card-subtitle>{{ note.category }}</mat-card-subtitle>
   <mat-card-content>
     <p>{{ note.body }}</p>

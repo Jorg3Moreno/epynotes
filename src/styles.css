@@ -13,3 +13,7 @@
 .cardfoot {
   padding: 0 8px 5px;
 }
+
+.spacer {
+  float: right;
+}

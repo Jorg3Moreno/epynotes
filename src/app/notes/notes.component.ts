@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {NotesModel} from './notes.model';
 import {NotesService} from './notes.service';
 
@@ -19,6 +19,14 @@ export class NotesComponent {
   public openCreateNoteDialog() {
     this.matDialog.open(NotesDialogComponent);
   }
+
+  public editNote(note: NotesModel) {
+    this.matDialog.open(NotesDialogComponent, {data: note});
+  }
+
+  public deleteNote(note: NotesModel) {
+    this.noteService.removeNote(note);
+  }
 }
 
 @Component({
@@ -29,30 +37,50 @@ export class NotesDialogComponent implements OnInit {
   categories: string[] = ['Job', 'Personal'];
   note: NotesModel;
 
-  constructor(private dialogRef: MatDialogRef<NotesDialogComponent>,
+  constructor(@Inject(MAT_DIALOG_DATA)private data: NotesModel,
+              private dialogRef: MatDialogRef<NotesDialogComponent>,
               private noteService: NotesService,
               private snackBar: MatSnackBar
   ) {
   }
 
   ngOnInit(): void {
-    this.note = new NotesModel();
+    if (this.data) {
+      this.note = this.data;
+    } else {
+      this.note = new NotesModel();
+    }
   }
 
   public saveNote() {
     console.log(this.note);
-    this.note.id = Date.now();
-    this.noteService.createNote(this.note)
-      .then(() => {
-        this.dialogRef.close();
-        this.snackBar.open('Note has been created', 'OK', {
-          duration: 2000,
+    if (this.note.id === undefined) {
+      this.note.id = Date.now();
+      this.noteService.createNote(this.note)
+        .then(() => {
+          this.dialogRef.close();
+          this.snackBar.open('Note has been created', 'OK', {
+            duration: 2000,
+          });
+        })
+        .catch(() => {
+          this.snackBar.open('An error has occurred', 'ERROR', {
+            duration: 2000,
+          });
         });
-      })
-      .catch(() => {
-        this.snackBar.open('An error has occurred', 'ERROR', {
-          duration: 2000,
+    } else {
+      this.noteService.updateNote(this.note)
+        .then(() => {
+          this.dialogRef.close();
+          this.snackBar.open('Note has been updated', 'OK', {
+            duration: 2000,
+          });
+        })
+        .catch(() => {
+          this.snackBar.open('An error has occurred', 'ERROR', {
+            duration: 2000,
+          });
         });
-      });
+    }
   }
 }
