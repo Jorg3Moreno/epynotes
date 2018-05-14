@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {AuthComponent, AuthDialogComponent} from './auth.component';
 import {AuthService} from './auth.service';
-import {MatButtonModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {authRoute} from './auth.route';
 import {RouterModule} from '@angular/router';
@@ -22,7 +22,8 @@ const ROUTES = [
     MatInputModule,
     MatDialogModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   entryComponents: [
     AuthComponent,

@@ -1,20 +1,26 @@
 <form name="editForm" role="form" novalidate (ngSubmit)="login()" #editForm="ngForm">
-  <span mat-dialog-title="">Login to EpyNotes</span>
-  <mat-dialog-content>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Username" name="user" [(ngModel)]="authUser.user">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Password" name="pass" [(ngModel)]="authUser.pass">
-    </mat-form-field>
-  </mat-dialog-content>
-  <mat-dialog-actions align="right">
-    <button mat-raised-button="" mat-dialog-close="">
-      <mat-icon>block</mat-icon> Cancel
-    </button>
-    <button mat-raised-button="" color="accent" type="submit">
-      <mat-icon>check_circle</mat-icon> Login
-    </button>
-    <mat-hint><a (click)="openRegisterUser()">Register now!</a></mat-hint>
-  </mat-dialog-actions>
+  <mat-card>
+    <mat-card-title>Login to Epy Notes</mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Username" name="user" [(ngModel)]="authUser.user">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Password" name="pass" [(ngModel)]="authUser.pass">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button="" routerLink="/">
+        <mat-icon>block</mat-icon> Cancel
+      </button>
+      <button mat-raised-button="" color="accent" type="submit">
+        <mat-icon>check_circle</mat-icon> Login
+      </button>
+    </mat-card-actions>
+    <mat-card-footer class="cardfoot" align="right">
+      <mat-hint (click)="openRegisterUser()">
+        <small>Register now!</small>
+      </mat-hint>
+    </mat-card-footer>
+  </mat-card>
 </form>
