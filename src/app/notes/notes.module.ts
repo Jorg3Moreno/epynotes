@@ -13,6 +13,12 @@ import {
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {notesRoute} from './notes.route';
+import {RouterModule} from '@angular/router';
+
+const ROUTES = [
+  ...notesRoute
+];
 
 @NgModule({
   declarations: [
@@ -24,6 +30,7 @@ import {CommonModule} from '@angular/common';
     NotesDialogComponent
   ],
   imports: [
+    RouterModule.forChild(ROUTES),
     CommonModule,
     FormsModule,
     MatCardModule,

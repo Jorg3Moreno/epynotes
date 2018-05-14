@@ -17,3 +17,7 @@
 .spacer {
   float: right;
 }
+
+.title_space {
+  flex: 1 1 auto;
+}

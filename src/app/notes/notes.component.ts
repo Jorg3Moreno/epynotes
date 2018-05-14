@@ -52,6 +52,7 @@ export class NotesDialogComponent implements OnInit {
     }
   }
 
+  // TODO: improve method, many duplicated code
   public saveNote() {
     console.log(this.note);
     if (this.note.id === undefined) {
