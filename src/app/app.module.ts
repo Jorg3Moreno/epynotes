@@ -12,12 +12,15 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MatToolbarModule } from '@angular/material';
 import { NotesModule } from './notes/notes.module';
+import {AppRoutingModule} from './app-routing.module';
+import {AuthModule} from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
@@ -27,7 +30,8 @@ import { NotesModule } from './notes/notes.module';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
-    NotesModule
+    NotesModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
