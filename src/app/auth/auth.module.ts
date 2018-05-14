@@ -1,7 +1,15 @@
 import {NgModule} from '@angular/core';
 import {AuthComponent, AuthDialogComponent} from './auth.component';
 import {AuthService} from './auth.service';
-import {MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSnackBarModule
+} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {authRoute} from './auth.route';
 import {RouterModule} from '@angular/router';
@@ -23,7 +31,8 @@ const ROUTES = [
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   entryComponents: [
     AuthComponent,
