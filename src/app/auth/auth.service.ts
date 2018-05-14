@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 export class AuthService {
 
   constructor(private ngFireAuth: AngularFireAuth) {
+    this.isLogged();
   }
 
   registerUser(user: string, pass: string) {
@@ -22,5 +23,9 @@ export class AuthService {
 
   logout() {
     return this.ngFireAuth.auth.signOut();
+  }
+
+  isLogged() {
+    return this.ngFireAuth.authState;
   }
 }

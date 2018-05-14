@@ -24,7 +24,6 @@ export class AuthComponent {
         this.matSnackBar.open('Login successful', 'OK', {
           duration: 2000,
         });
-        this.router.navigate(['/']);
       })
       .catch(() => {
         this.matSnackBar.open('An error has occurred', 'ERROR', {

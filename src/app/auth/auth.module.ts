@@ -13,6 +13,7 @@ import {
 import {FormsModule} from '@angular/forms';
 import {authRoute} from './auth.route';
 import {RouterModule} from '@angular/router';
+import {AuthUserRouteAccessService} from './auth-user-route-access.service';
 
 const ROUTES = [
   ...authRoute
@@ -39,7 +40,8 @@ const ROUTES = [
     AuthDialogComponent
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthUserRouteAccessService
   ]
 })
 export class AuthModule { }

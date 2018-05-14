@@ -2,6 +2,11 @@
   <mat-toolbar-row>
     <span>EpyNotes App</span>
     <span class="title_space"></span>
-    <mat-icon routerLink="auth-login">account_circle</mat-icon>
+    <mat-icon
+      *ngIf="authState"
+      [matMenuTriggerFor]="menu">account_circle</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">LogOut</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
