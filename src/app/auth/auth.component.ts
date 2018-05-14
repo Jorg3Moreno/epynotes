@@ -21,6 +21,7 @@ export class AuthComponent {
   public login() {
     this.authService.loginWithEmail(this.authUser.user, this.authUser.pass)
       .then(() => {
+        this.router.navigate(['/notes']);
         this.matSnackBar.open('Login successful', 'OK', {
           duration: 2000,
         });
