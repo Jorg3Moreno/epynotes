@@ -47,3 +47,15 @@ Add firebase library to use in angular from [github](https://github.com/angular/
 compatibility with ng6 and rxjs6
 
 `npm install rxjs@6 rxjs-compat@6 --save`
+
+install firebase tools
+
+`npm install -g firebase-tools`
+
+`firebase login` login to firebase
+
+`firebase init` init the project and select `Hosting` in the options. Now select the Firebase project: `epynotes`. PUblic directory: `dist/epynotes`.
+Redirect to /index.html?: `yes`. Overryde: `NO`
+
+
+`firebase deploy` deploy it
