@@ -15,6 +15,7 @@ import { NotesModule } from './notes/notes.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import {NavbarComponent} from './navbar/navbar.component';
+import {MessagingService} from './messaging/messaging.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {NavbarComponent} from './navbar/navbar.component';
     NotesModule,
     AuthModule
   ],
-  providers: [],
+  providers: [MessagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
