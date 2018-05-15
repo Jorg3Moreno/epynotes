@@ -9,10 +9,11 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class MessagingService {
 
+  // Retrieve Firebase Messaging object
   messaging = firebase.messaging();
   currentMessage = new BehaviorSubject(null);
 
-  constructor(private db: AngularFireDatabase,
+  constructor(private ngFireDB: AngularFireDatabase,
               private afAuth: AngularFireAuth) {
     this.messaging.usePublicVapidKey('PUT_YOU_GENERATED_FIREBASE_PUBLIC_KEY_HERE');
 
@@ -26,7 +27,7 @@ export class MessagingService {
         return;
       }
       const data = { [user.uid]: token };
-      this.db.object('fcmTokens/').update(data);
+      this.ngFireDB.object('fcmTokens/').update(data);
     });
   }
 

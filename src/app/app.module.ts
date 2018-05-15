@@ -10,7 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import { NotesModule } from './notes/notes.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
@@ -30,6 +30,8 @@ import {MessagingService} from './messaging/messaging.service';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    MatCardModule,
+    MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

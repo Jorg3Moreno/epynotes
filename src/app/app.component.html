@@ -1,3 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-navbar></app-navbar>
+<!--{{ message | async | json}}-->
+<mat-card role="group" *ngIf="message">
+  <mat-card-header>
+    <img mat-card-avatar src="{{message.notification.icon}}" alt="Click here to visit">
+    <mat-card-title>{{ message.notification.title }}</mat-card-title>
+    <mat-card-subtitle>EpyNotes Team</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ message.notification.body }}</p>
+  </mat-card-content>
+  <mat-card-footer class="cardfoot" align="right">
+    <mat-hint>
+      <small><a href="{{message.notification.click_action}}">GO</a></small>
+    </mat-hint>
+  </mat-card-footer>
+</mat-card>
 <router-outlet></router-outlet>

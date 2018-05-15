@@ -8,14 +8,17 @@ import {MessagingService} from './messaging/messaging.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  message: any = {};
+  message: any;
 
   // swUpdate to handle/notify when service worker need be updated
   constructor (private swUpdate: SwUpdate,
                private messagingService: MessagingService) {
     this.messagingService.getPermission();
     this.messagingService.receiveMessage();
-    this.message = this.messagingService.currentMessage;
+    this.messagingService.currentMessage
+      .subscribe((msg) => {
+        this.message = msg;
+      });
   }
 
   ngOnInit(): void {
