@@ -14,6 +14,8 @@ export class MessagingService {
 
   constructor(private db: AngularFireDatabase,
               private afAuth: AngularFireAuth) {
+    this.messaging.usePublicVapidKey('PUT_YOU_GENERATED_FIREBASE_PUBLIC_KEY_HERE');
+
   }
 
   // Each user has a temporal token (not for loggin) in order

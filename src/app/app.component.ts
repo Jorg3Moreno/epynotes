@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from '@angular/service-worker';
+import {MessagingService} from './messaging/messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,14 @@ import {SwUpdate} from '@angular/service-worker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  message: any = {};
 
   // swUpdate to handle/notify when service worker need be updated
-  constructor (private swUpdate: SwUpdate) {
+  constructor (private swUpdate: SwUpdate,
+               private messagingService: MessagingService) {
+    this.messagingService.getPermission();
+    this.messagingService.receiveMessage();
+    this.message = this.messagingService.currentMessage;
   }
 
   ngOnInit(): void {
