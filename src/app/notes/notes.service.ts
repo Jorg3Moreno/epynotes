@@ -24,6 +24,6 @@ export class NotesService {
   }
 
   public removeNote(note) {
-    return this.ngfireDB.database.ref(`/notes/${note.id}`).remove(note);
+    return this.ngfireDB.database.ref(`/notes/${note.id}`).remove();
   }
 }
